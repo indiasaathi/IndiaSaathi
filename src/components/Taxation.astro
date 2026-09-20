@@ -1,0 +1,17 @@
+---
+import { taxation } from '../data/services';
+---
+
+<section class="taxation-band" aria-labelledby="taxation-heading">
+  <h2 class="section-label" id="taxation-heading">
+    Taxation &amp; Repatriation Support
+  </h2>
+  <div class="tax-grid">
+    {taxation.map((item) => (
+      <div class="tax-item">
+        <div class="tax-dot" />
+        <div class="tax-text">{item}</div>
+      </div>
+    ))}
+  </div>
+</section>

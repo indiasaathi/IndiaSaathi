@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base
+  title={`Page Not Found – ${site.name}`}
+  description="The page you're looking for doesn't exist."
+  canonical={`${site.url}/404`}
+>
+  <div class="brochure">
+    <header class="header">
+      <div class="header-top">
+        <div class="logo-block">
+          <div class="logo-name">INDIA SAATHI</div>
+          <div class="logo-tag">
+            {site.tagline} · {site.location}
+          </div>
+        </div>
+      </div>
+      <h1 class="header-headline">404 — Page Not Found</h1>
+      <p class="header-sub">
+        The page you're looking for doesn't exist. Head back to the homepage to explore our
+        services.
+      </p>
+      <div class="gold-bar"></div>
+    </header>
+    <div class="body">
+      <p style="font-size: 13px; color: var(--ink-3); line-height: 1.7;">
+        <a href="/" style="color: var(--navy); font-weight: 700;">
+          ← Return to homepage
+        </a>
+      </p>
+    </div>
+  </div>
+</Base>

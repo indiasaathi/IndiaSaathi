@@ -1,0 +1,12 @@
+---
+import { markets } from '../data/site';
+---
+
+<div style="margin-bottom: 0.4rem;">
+  <h2 class="section-label">NRIs We Serve</h2>
+  <div class="markets-row">
+    {markets.map((m) => (
+      <span class="market-tag">{m}</span>
+    ))}
+  </div>
+</div>

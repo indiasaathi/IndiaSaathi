@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Pillars from '../components/Pillars.astro';
+import IntroBand from '../components/IntroBand.astro';
+import PropertySale from '../components/PropertySale.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import AssetCard from '../components/AssetCard.astro';
+import Taxation from '../components/Taxation.astro';
+import WhyUs from '../components/WhyUs.astro';
+import Markets from '../components/Markets.astro';
+import Footer from '../components/Footer.astro';
+import ContactModal from '../components/ContactModal.astro';
+import { site } from '../data/site';
+import { ongoingServices, assets } from '../data/services';
+
+const leftServices = ongoingServices.slice(0, 2);
+const rightServices = ongoingServices.slice(2, 4);
+---
+
+<Base
+  title={`${site.name} – NRI India Desk, Mumbai, Maharashtra`}
+  description={site.description}
+  canonical={site.url}
+>
+  <div class="brochure">
+    <Header />
+    <Pillars />
+    <IntroBand />
+
+    <main class="body">
+      <PropertySale />
+
+      <div class="divider"></div>
+      <h2 class="section-label">Ongoing Property Management</h2>
+      <div class="two-col">
+        <div>
+          {leftServices.map((s) => (
+            <ServiceCard icon={s.icon} title={s.title} items={s.items} />
+          ))}
+        </div>
+        <div class="col-divider"></div>
+        <div>
+          {rightServices.map((s) => (
+            <ServiceCard icon={s.icon} title={s.title} items={s.items} />
+          ))}
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <h2 class="section-label">Financial Asset Closure &amp; Legacy Management</h2>
+      <div class="asset-grid" style="margin-bottom: 2rem;">
+        {assets.map((a) => (
+          <AssetCard
+            icon={a.icon}
+            title={a.title}
+            items={a.items}
+            span={a.span}
+            twoColItems={a.twoColItems}
+          />
+        ))}
+      </div>
+
+      <div class="divider"></div>
+      <Taxation />
+      <WhyUs />
+      <Markets />
+    </main>
+
+    <Footer />
+  </div>
+
+  <ContactModal />
+</Base>

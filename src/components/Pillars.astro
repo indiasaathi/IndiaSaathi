@@ -1,0 +1,9 @@
+---
+import { pillars } from '../data/services';
+---
+
+<nav class="pillars" aria-label="Services overview">
+  {pillars.map((p) => (
+    <div class="pillar">{p}</div>
+  ))}
+</nav>

@@ -1,0 +1,34 @@
+---
+import { contact } from '../data/site';
+---
+
+<footer class="footer">
+  <div>
+    <p class="footer-tagline">
+      "Your peace of mind, our responsibility — from property to repatriation."
+    </p>
+    <div class="footer-contact">
+      <div class="contact-item">
+        <span>WhatsApp</span>
+        <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer">
+          {contact.whatsapp}
+        </a>
+      </div>
+      <div class="contact-item">
+        <span>Email</span>
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>
+      </div>
+      <div class="contact-item">
+        <span>Hours</span>
+        {contact.hours}
+      </div>
+    </div>
+    <div class="footer-details">{contact.location}</div>
+  </div>
+  <div class="footer-cta">
+    <a href={`mailto:${contact.email}`} class="cta-btn" data-open-contact>
+      Book a Free Consultation
+    </a>
+    <div class="footer-note">Confidential · No obligation · Remote-friendly</div>
+  </div>
+</footer>

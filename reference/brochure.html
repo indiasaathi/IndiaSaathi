@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Saathi – NRI India Desk, Mumbai, Maharashtra</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: #eae6df;
+    color: #1a1a1a;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brochure {
+    width: 210mm;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: 0 6px 50px rgba(0,0,0,0.14);
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: #0d2b45;
+    color: #fff;
+    padding: 2.8rem 3rem 2.2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 260px; height: 260px;
+    border: 40px solid rgba(200,165,90,0.15);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: 100px;
+    width: 130px; height: 130px;
+    border: 22px solid rgba(200,165,90,0.1);
+    border-radius: 50%;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.4rem;
+  }
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+  .logo-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #c8a55a;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+  .header-badge {
+    background: rgba(200,165,90,0.18);
+    border: 1px solid rgba(200,165,90,0.5);
+    border-radius: 4px;
+    padding: 7px 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #e0c07a;
+  }
+  .header-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.28;
+    color: #fff;
+    max-width: 500px;
+    margin-bottom: 0.9rem;
+  }
+  .header-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.7;
+    max-width: 500px;
+  }
+  .gold-bar {
+    height: 3px;
+    background: linear-gradient(90deg, #c8a55a, #e0c07a, #c8a55a);
+    margin-top: 2.2rem;
+  }
+
+  /* ─── PILLARS ─── */
+  .pillars {
+    background: #c8a55a;
+    display: flex;
+  }
+  .pillar {
+    flex: 1;
+    text-align: center;
+    padding: 10px 6px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    border-right: 1px solid rgba(255,255,255,0.28);
+  }
+  .pillar:last-child { border-right: none; }
+
+  /* ─── INTRO BAND ─── */
+  .intro-band {
+    background: #f9f7f3;
+    border-left: 4px solid #c8a55a;
+    padding: 1.1rem 3rem;
+    font-size: 13px;
+    font-style: italic;
+    color: #444;
+    line-height: 1.75;
+  }
+
+  /* ─── BODY ─── */
+  .body {
+    padding: 2.4rem 3rem;
+  }
+
+  /* ─── SECTION LABELS ─── */
+  .section-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8a55a;
+    margin-bottom: 1rem;
+  }
+
+  /* ─── SERVICE CARD ─── */
+  .service-card {
+    margin-bottom: 1.3rem;
+  }
+  .service-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+  }
+  .service-icon {
+    width: 30px; height: 30px;
+    background: #0d2b45;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .service-icon svg { width: 14px; height: 14px; fill: #c8a55a; }
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0d2b45;
+  }
+  .service-list {
+    list-style: none;
+    padding-left: 40px;
+  }
+  .service-list li {
+    font-size: 11.5px;
+    color: #555;
+    line-height: 1.65;
+    padding: 2px 0;
+    position: relative;
+  }
+  .service-list li::before {
+    content: '–';
+    color: #c8a55a;
+    position: absolute;
+    left: -16px;
+    font-size: 11px;
+  }
+
+  /* ─── 2-COL GRID ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0 2rem;
+    margin-bottom: 2rem;
+  }
+  .col-divider { background: #e8e4da; width: 1px; }
+
+  .divider {
+    height: 1px;
+    background: #e8e4da;
+    margin: 0 0 2rem;
+  }
+
+  /* ─── ASSET CLOSURE SECTION ─── */
+  .asset-section {
+    margin-bottom: 2rem;
+  }
+  .asset-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .asset-card {
+    border: 1px solid #e0dbd0;
+    border-radius: 6px;
+    padding: 14px 14px 12px;
+    background: #faf9f6;
+  }
+  .asset-card-icon {
+    width: 28px; height: 28px;
+    background: #0d2b45;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 9px;
+  }
+  .asset-card-icon svg { width: 13px; height: 13px; fill: #c8a55a; }
+  .asset-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #0d2b45;
+    margin-bottom: 7px;
+  }
+  .asset-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .asset-card ul li {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.6;
+    padding: 1.5px 0;
+    position: relative;
+    padding-left: 12px;
+  }
+  .asset-card ul li::before {
+    content: '·';
+    color: #c8a55a;
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  /* ─── PROPERTY SALE HIGHLIGHT ─── */
+  .property-sale {
+    background: #0d2b45;
+    border-radius: 6px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem 2rem;
+  }
+  .property-sale-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(200,165,90,0.3);
+    margin-bottom: 0.2rem;
+  }
+  .property-sale-header svg { width: 20px; height: 20px; fill: #c8a55a; }
+  .property-sale-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .property-sale-badge {
+    margin-left: auto;
+    background: rgba(200,165,90,0.2);
+    border: 1px solid rgba(200,165,90,0.4);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e0c07a;
+  }
+  .ps-col-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c8a55a;
+    margin-bottom: 6px;
+  }
+  .ps-list {
+    list-style: none;
+    padding: 0;
+  }
+  .ps-list li {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.65;
+    padding: 2px 0;
+    position: relative;
+    padding-left: 14px;
+  }
+  .ps-list li::before {
+    content: '✓';
+    color: #c8a55a;
+    position: absolute;
+    left: 0;
+    font-size: 10px;
+    top: 3px;
+  }
+  .ps-result {
+    grid-column: 1 / -1;
+    background: rgba(200,165,90,0.12);
+    border: 1px solid rgba(200,165,90,0.3);
+    border-radius: 4px;
+    padding: 8px 14px;
+    font-size: 11.5px;
+    color: #e0c07a;
+    font-style: italic;
+    margin-top: 0.4rem;
+  }
+
+  /* ─── TAXATION ─── */
+  .taxation-band {
+    background: #f9f7f3;
+    border-radius: 6px;
+    padding: 1.3rem 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .tax-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem 1.4rem;
+    margin-top: 0.8rem;
+  }
+  .tax-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+  }
+  .tax-dot {
+    width: 7px; height: 7px;
+    background: #c8a55a;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .tax-text {
+    font-size: 11.5px;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  /* ─── WHY SECTION ─── */
+  .why-section {
+    background: #f9f7f3;
+    border-radius: 6px;
+    padding: 1.4rem 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  .why-item {
+    text-align: center;
+  }
+  .why-icon {
+    width: 36px; height: 36px;
+    margin: 0 auto 7px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why-icon svg { width: 22px; height: 22px; }
+  .why-label {
+    font-size: 10.5px;
+    color: #444;
+    line-height: 1.45;
+    font-weight: 700;
+  }
+
+  /* ─── MARKETS ─── */
+  .markets-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.6rem;
+  }
+  .market-tag {
+    background: #0d2b45;
+    color: #e0c07a;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: #0d2b45;
+    padding: 1.8rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+  }
+  .footer-contact {
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+  }
+  .contact-item {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+  }
+  .contact-item span {
+    color: #c8a55a;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .footer-details {
+    margin-top: 8px;
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+  .footer-cta {
+    text-align: right;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #c8a55a;
+    color: #0d2b45;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .footer-note {
+    font-size: 9px;
+    color: rgba(255,255,255,0.3);
+    text-align: right;
+    margin-top: 6px;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .brochure { box-shadow: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="brochure">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-block">
+        <div class="logo-name">INDIA SAATHI</div>
+        <div class="logo-tag">Your Trusted Companion in India · Mumbai, Maharashtra</div>
+      </div>
+      <div class="header-badge">NRI India Desk</div>
+    </div>
+    <div class="header-headline">End-to-End Asset, Property & Financial Services for NRIs — From Anywhere in the World</div>
+    <div class="header-sub">Whether you need to sell property, close legacy assets, manage ongoing affairs, or repatriate funds — India Saathi is your single trusted point of contact in Mumbai, handling everything professionally and transparently while you stay abroad.</div>
+    <div class="gold-bar"></div>
+  </div>
+
+  <!-- SERVICE PILLARS -->
+  <div class="pillars">
+    <div class="pillar">Property Sale</div>
+    <div class="pillar">Asset Closure</div>
+    <div class="pillar">Taxation & Repatriation</div>
+    <div class="pillar">Legal & POA</div>
+    <div class="pillar">Society & Reporting</div>
+    <div class="pillar">Investments</div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro-band">
+    Living abroad should never mean losing control of what matters most back home. India Saathi is your Mumbai-based companion — managing property sales, closing financial assets, handling tax compliance, legal documentation, and society affairs so you can live confidently, wherever in the world you are.
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- PROPERTY SALE HIGHLIGHT BOX -->
+    <div style="margin-bottom: 0.6rem;">
+      <div class="section-label">Flagship Service</div>
+    </div>
+    <div class="property-sale">
+      <div class="property-sale-header">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <div class="property-sale-heading">Property Sale in India — Complete End-to-End Management</div>
+        <div class="property-sale-badge">Fully Remote Possible</div>
+      </div>
+      <div>
+        <div class="ps-col-label">Transaction Management</div>
+        <ul class="ps-list">
+          <li>Coordination from token money to registration</li>
+          <li>Drafting MOU, Agreement for Sale & Receipts</li>
+          <li>TDS compliance guidance (23.92% for NRIs)</li>
+          <li>Stamp duty & registration support</li>
+          <li>Buyer, bank & registrar office coordination</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ps-col-label">Completion & Handover</div>
+        <ul class="ps-list">
+          <li>NRO account opening & fund credit assistance</li>
+          <li>Special Power of Attorney (POA) support</li>
+          <li>Society NOCs & documentation</li>
+          <li>Smooth physical property handover</li>
+          <li>Post-sale repatriation guidance</li>
+        </ul>
+      </div>
+      <div class="ps-result">✦ Result: Safe, transparent, and timely completion of property sale — without you needing to travel to India.</div>
+    </div>
+
+    <!-- ONGOING PROPERTY MANAGEMENT -->
+    <div class="divider"></div>
+    <div class="section-label">Ongoing Property Management</div>
+    <div class="two-col">
+      <div>
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </div>
+            <div class="service-title">Property Maintenance & Oversight</div>
+          </div>
+          <ul class="service-list">
+            <li>Periodic property inspection & photo reporting</li>
+            <li>Tenant verification, coordination & rent supervision</li>
+            <li>Society communication on your behalf</li>
+            <li>Property document audit & fraud protection</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <div class="service-title">Society & Redevelopment</div>
+          </div>
+          <ul class="service-list">
+            <li>Physical representation in society meetings & AGMs</li>
+            <li>Voting representation on your behalf</li>
+            <li>Redevelopment agreement review & oversight</li>
+            <li>Builder & managing committee coordination</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div>
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            </div>
+            <div class="service-title">Legal & Documentation</div>
+          </div>
+          <ul class="service-list">
+            <li>Drafting & processing Power of Attorney</li>
+            <li>Agreement review & title verification</li>
+            <li>Coordination with legal professionals</li>
+            <li>Property purchase documentation support</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div class="service-title">Client Reporting</div>
+          </div>
+          <ul class="service-list">
+            <li>Monthly structured update reports</li>
+            <li>Photographic & documentary evidence</li>
+            <li>Escalation matrix for urgent matters</li>
+            <li>Dedicated NRI relationship manager</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASSET CLOSURE SECTION -->
+    <div class="divider"></div>
+    <div class="section-label">Financial Asset Closure & Legacy Management</div>
+    <div class="asset-grid" style="margin-bottom: 2rem;">
+
+      <div class="asset-card">
+        <div class="asset-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        </div>
+        <div class="asset-card-title">Bank Account Closure</div>
+        <ul>
+          <li>Savings & Fixed Deposit management</li>
+          <li>Closure, consolidation or maintenance</li>
+          <li>Single or multiple legal heir cases</li>
+          <li>Legal Heir NOC preparation & notarization</li>
+          <li>Bank liaison for claim settlement</li>
+        </ul>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.33C18 2.54 15.33 0 12 0 8.67 0 6 2.54 6 4.67c0 .45.11.89.18 1.33H4c-1.11 0-1.99.89-1.99 2L2 20c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/></svg>
+        </div>
+        <div class="asset-card-title">Provident Fund (PF) Closure</div>
+        <ul>
+          <li>PF claim processing for NRIs</li>
+          <li>Support for deceased account holders</li>
+          <li>End-to-end documentation</li>
+          <li>Bank coordination for fund credit</li>
+        </ul>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        </div>
+        <div class="asset-card-title">Insurance Maturity & Claims</div>
+        <ul>
+          <li>Maturity claims for existing policyholders</li>
+          <li>Death claims — single & multiple heirs</li>
+          <li>Consulate & India-notarized NOCs</li>
+          <li>Direct credit of proceeds to bank account</li>
+        </ul>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+        </div>
+        <div class="asset-card-title">Dematerialisation of Shares</div>
+        <ul>
+          <li>NRO & Demat account opening</li>
+          <li>Physical shares converted to Demat form</li>
+          <li>Inheritance cases with multiple legal heirs</li>
+          <li>Coordination with companies & registrars</li>
+        </ul>
+      </div>
+
+      <div class="asset-card" style="grid-column: span 2;">
+        <div class="asset-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <div class="asset-card-title">NRO Account Opening & Fund Management</div>
+        <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem;">
+          <li>NRO savings account opening</li>
+          <li>Coordination for fund credit post-sale</li>
+          <li>Fund repatriation to overseas accounts</li>
+          <li>FEMA & RBI compliant transfers</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- TAXATION -->
+    <div class="divider"></div>
+    <div class="taxation-band">
+      <div class="section-label">Taxation & Repatriation Support</div>
+      <div class="tax-grid">
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">Coordination with Chartered Accountant</div></div>
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">PAN card application for NRIs</div></div>
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">Aadhaar card (Indian citizens / OCI)</div></div>
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">Income tax computation & return filing</div></div>
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">Capital gains tax planning & calculation</div></div>
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">TDS refund claims & documentation</div></div>
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">Form 15CB / 15CA clearance support</div></div>
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">Legal repatriation of funds abroad</div></div>
+        <div class="tax-item"><div class="tax-dot"></div><div class="tax-text">Full RBI & FEMA compliance</div></div>
+      </div>
+    </div>
+
+    <!-- WHY SECTION -->
+    <div class="why-section">
+      <div class="section-label">Why NRIs Choose India Saathi</div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="#c8a55a"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <div class="why-label">Single Point of Contact</div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="#c8a55a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+          <div class="why-label">Fully Compliant — Indian Laws & RBI Norms</div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="#c8a55a"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div>
+          <div class="why-label">Transparent Reporting & Updates</div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="#c8a55a"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+          <div class="why-label">Drafts & Formats Readily Available</div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="#c8a55a"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm1 14h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+          <div class="why-label">Remote Execution with POA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETS -->
+    <div style="margin-bottom: 0.4rem;">
+      <div class="section-label">NRIs We Serve</div>
+      <div class="markets-row">
+        <span class="market-tag">UAE / Dubai</span>
+        <span class="market-tag">USA</span>
+        <span class="market-tag">United Kingdom</span>
+        <span class="market-tag">Canada</span>
+        <span class="market-tag">Australia</span>
+        <span class="market-tag">Singapore</span>
+        <span class="market-tag">& Worldwide</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <div class="footer-tagline">"Your peace of mind, our responsibility — from property to repatriation."</div>
+      <div class="footer-contact">
+        <div class="contact-item"><span>WhatsApp</span>+91 81695 38234</div>
+        <div class="contact-item"><span>Email</span>sureshshah3103@gmail.com</div>
+        <div class="contact-item"><span>Hours</span>Mon–Sat, 11:00–21:00 IST</div>
+      </div>
+      <div class="footer-details">Mumbai, Maharashtra</div>
+    </div>
+    <div class="footer-cta">
+      <div class="cta-btn">Book a Free Consultation</div>
+      <div class="footer-note">Confidential · No obligation · Remote-friendly</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

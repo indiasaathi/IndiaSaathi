@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+import { propertySale } from '../data/services';
+
+const { heading, badge, icon, transaction, completion, result } = propertySale;
+---
+
+<div style="margin-bottom: 0.6rem;">
+  <h2 class="section-label">Flagship Service</h2>
+</div>
+<section class="property-sale" aria-labelledby="property-sale-heading">
+  <div class="property-sale-header">
+    <Icon name={icon} />
+    <h3 class="property-sale-heading" id="property-sale-heading">
+      {heading}
+    </h3>
+    <div class="property-sale-badge">{badge}</div>
+  </div>
+  <div>
+    <div class="ps-col-label">{transaction.label}</div>
+    <ul class="ps-list">
+      {transaction.items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+  <div>
+    <div class="ps-col-label">{completion.label}</div>
+    <ul class="ps-list">
+      {completion.items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+  <div class="ps-result">{result}</div>
+</section>

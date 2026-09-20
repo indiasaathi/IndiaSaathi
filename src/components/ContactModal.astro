@@ -1,0 +1,71 @@
+---
+import { contact } from '../data/site';
+---
+
+<dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-dialog-title">
+  <div class="contact-dialog-inner">
+    <button type="button" class="contact-dialog-close" data-close-contact aria-label="Close">
+      &times;
+    </button>
+    <div class="contact-dialog-eyebrow">Get in Touch</div>
+    <h2 class="contact-dialog-title" id="contact-dialog-title">
+      Book a Free Consultation
+    </h2>
+    <p class="contact-dialog-sub">
+      Drop us a line and we'll get back to you — confidential, no obligation.
+    </p>
+    <div class="contact-dialog-row">
+      <a href={`mailto:${contact.email}`}>{contact.email}</a>
+      <button type="button" class="contact-dialog-copy" data-copy-email>
+        Copy
+      </button>
+    </div>
+    <p class="contact-dialog-meta">
+      <span>WhatsApp</span>
+      {contact.whatsapp}
+      <br />
+      <span>Hours</span>
+      {contact.hours}
+    </p>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('contact-dialog') as HTMLDialogElement | null;
+  const openers = document.querySelectorAll<HTMLElement>('[data-open-contact]');
+  const closers = document.querySelectorAll<HTMLElement>('[data-close-contact]');
+  const copyBtn = document.querySelector<HTMLButtonElement>('[data-copy-email]');
+  const emailLink = document.querySelector<HTMLAnchorElement>('.contact-dialog-row a');
+
+  if (dialog) {
+    openers.forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        dialog.showModal();
+      });
+    });
+
+    closers.forEach((el) => {
+      el.addEventListener('click', () => dialog.close());
+    });
+
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+
+  if (copyBtn && emailLink) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(emailLink.textContent?.trim() ?? '');
+        const original = copyBtn.textContent;
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copyBtn.textContent = original;
+        }, 1500);
+      } catch {
+        // Clipboard API unavailable — the email is still a working mailto link.
+      }
+    });
+  }
+</script>

@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  icon: string;
+  title: string;
+  items: string[];
+  span?: number;
+  twoColItems?: boolean;
+}
+
+const { icon, title, items, span = 1, twoColItems = false } = Astro.props;
+---
+
+<div class="asset-card" style={span > 1 ? `grid-column: span ${span};` : undefined}>
+  <div class="asset-card-icon">
+    <Icon name={icon} />
+  </div>
+  <div class="asset-card-title">{title}</div>
+  <ul
+    style={twoColItems ? 'display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem;' : undefined}
+  >
+    {items.map((item) => (
+      <li>{item}</li>
+    ))}
+  </ul>
+</div>
