@@ -11,8 +11,8 @@ export const site = {
 
 export const contact = {
   email: 'sureshshah@indiasaathi.com',
-  whatsapp: '+91 81695 38234',
-  whatsappLink: 'https://wa.me/918169538234',
+  whatsapp: '+91 74002 04345',
+  whatsappLink: 'https://wa.me/917400204345',
   hours: 'Mon–Sat, 11:00–21:00 IST',
   location: 'Mumbai, Maharashtra',
 };
